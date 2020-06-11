@@ -9,9 +9,10 @@ import { MenuComponent } from "./menu/menu.component";
 import { PessoaComponent } from './application/pessoa/pessoa.component';
 import { UsuarioComponent } from './application/usuario/usuario.component';
 import { AcessoComponent } from './application/acesso/acesso.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
-  declarations: [AppComponent, MenuComponent, PessoaComponent, UsuarioComponent, AcessoComponent],
+  declarations: [AppComponent, MenuComponent, PessoaComponent, UsuarioComponent, AcessoComponent, HomeComponent],
   imports: [BrowserModule, HttpClientModule, FormsModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
