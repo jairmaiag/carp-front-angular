@@ -1,0 +1,85 @@
+<div class="d-flex justify-content-center">
+  <div class="card">
+    <h5 class="card-header">Acesso ao sistema</h5>
+    <div class="card-body">
+    <form (ngSubmit)="login()" #acesso="ngForm" class="form-group" id="acessar">
+      <div class="d-flex justify-content-center">
+        <div class="row">
+          <div class="col">
+            <div class="form-group">
+              <label for="login">Usuário</label>
+              <input
+                type="text"
+                class="form-control form-control-sm"
+                id="login"
+                #lolgin="ngModel"
+                name="login"
+                [(ngModel)]="usuario.login"
+                data-toggle="tooltip"
+                data-placement="bottom"
+                title="Usuário da aplicação"
+                placeholder="CPF,e-mail ou usuário"
+                required
+                autofocus
+              />
+            </div>
+          </div>
+          <div class="w-100"></div>
+          <div class="col">
+            <div class="form-group">
+              <label for="senha">Senha</label>
+              <input
+                type="password"
+                class="form-control form-control-sm"
+                id="senha"
+                #senha="ngModel"
+                name="senha"
+                [(ngModel)]="usuario.senha"
+                data-toggle="tooltip"
+                data-placement="bottom"
+                title="Senha do usuário"
+                placeholder="Senha"
+                required
+              />
+            </div>
+          </div>
+          <div class="w-100"></div>
+          <div class="col">
+            <button
+              type="submit"
+              class="btn btn-primary"
+              [disabled]="acesso.form.invalid"
+              data-toggle="tooltip"
+              data-placement="bottom"
+              title="Clique para entrar"
+            >
+              Entrar
+            </button>
+          </div>
+        </div>
+        <!--
+                <div class="row">
+                </div>
+                <div class="row">
+                    <div class="col alert alert-danger" role="alert">
+                        Um simples alerta danger. Olha só!
+                    </div>
+                </div>
+            -->
+      </div>
+    </form>
+  </div>
+  </div>
+</div>
+<!--
+
+        
+        <form class="form-group" *ngIf="logado" id="logout">
+            <div class="form-group">
+                <input type="text" class="form-control-plaintext text-right"  value="{{usuario.login}}" readonly title="Usuário da aplicação">
+            </div>&nbsp;
+            <button type="submit" class="btn btn-outline-primary btn-sm" data-toggle="tooltip" data-placement="bottom"
+            (click)="sair()" title="Clique para sair">Sair</button>
+          </div>
+        </form>
+        -->
