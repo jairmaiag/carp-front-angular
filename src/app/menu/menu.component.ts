@@ -1,36 +1,23 @@
 import { Component, OnInit } from "@angular/core";
-import { Item } from "./item";
+
 import * as $ from "jquery";
+
+import { MenuService } from "./menu.service";
+import { Item } from "./item";
 
 @Component({
   selector: "menu",
   templateUrl: "./menu.component.html",
   styleUrls: ["./menu.component.css"],
+  providers: [MenuService],
 })
 export class MenuComponent implements OnInit {
-  itnesTabela: Array<Item> = [
-    { id: 1, texto: "Usuário", link: "/usuario", subIntens: null },
-    { id: 2, texto: "Funcionário", link: "/funcionario", subIntens: null },
-    { id: 3, texto: "Cliente", link: "/cliente", subIntens: null },
-    { id: 4, texto: "Fornecedor", link: "/fornecedor", subIntens: null },
-    { id: 5, texto: "Produto", link: "/produto", subIntens: null },
-  ];
-  itemTabela = {
-    id: 4,
-    texto: "Tabelas",
-    link: "#",
-    subIntens: this.itnesTabela,
-  };
+  servico: MenuService;
+  itensMenu: Array<Item>;
 
-  itensMenu: Array<Item> = [
-    { id: 1, texto: "Home", link: "/", subIntens: null },
-    { id: 2, texto: "Orçamento", link: "/orcamento", subIntens: null },
-    { id: 3, texto: "Ordem de Serviço", link: "/os", subIntens: null },
-    this.itemTabela,
-    { id: 5, texto: "Login", link: "/login", subIntens: null },
-  ];
-
-  constructor() {
+  constructor(servico: MenuService) {
+    this.servico = servico;
+    this.itensMenu = this.servico.getMenu();
     $(".nav-item").each(function (posicao, item) {
       item.onclick = function () {
         var $listaMenu = $("#intensBarraMenu");
