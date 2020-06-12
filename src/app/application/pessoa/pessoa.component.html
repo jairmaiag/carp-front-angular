@@ -1,1 +1,30 @@
-<p>pessoa works!</p>
+<div class="card">
+  <div class="card-header">
+    <div class="float-left">
+      <h4>Pessoa</h4>
+    </div>
+    <div class="float-right">
+      Botao incluir
+    </div>
+  </div>
+  <div class="card-body">
+      <table class="table table-hover">
+          <thead>
+              <tr>
+                  <th>Id</th>
+                  <th>Nome</th>
+                  <th>Nascimento</th>
+                  <th>Sexo</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr *ngFor="let pessoa of pessoas">
+                  <td>{{pessoa.id}}</td>
+                  <td>{{pessoa.nome}}</td>
+                  <td>{{pessoa.nascimento}}</td>
+                  <td>{{pessoa.sexo}}</td>
+              </tr>
+          </tbody>
+      </table>
+  </div>
+</div>

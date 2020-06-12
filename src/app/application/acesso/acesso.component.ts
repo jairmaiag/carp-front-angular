@@ -1,5 +1,8 @@
-import { Usuario } from "./../../model/usuario";
 import { Component, OnInit } from "@angular/core";
+
+import * as $ from "jquery";
+
+import { Usuario } from "./../../model/usuario";
 
 @Component({
   selector: "acesso",
@@ -8,7 +11,10 @@ import { Component, OnInit } from "@angular/core";
 })
 export class AcessoComponent implements OnInit {
   usuario: Usuario;
-  constructor() {}
+  constructor() {
+    $("body").addClass("bodyAcesso");
+    $("#barraMenu").hide();
+  }
 
   ngOnInit(): void {}
   login(): void {}
