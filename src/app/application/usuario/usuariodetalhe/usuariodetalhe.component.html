@@ -1,0 +1,18 @@
+<div class="card">
+  <div class="card-header">
+    <div class="float-left">
+      <h4>Usuário</h4>
+    </div>
+    <div class="float-right">
+      <button type="button" class="btn btn-primary" (click)="voltar()">
+        Cancelar
+      </button>
+    </div>
+  </div>
+  <div class="card-body">
+    <h6 class="card-subtitle mb-2 text-muted">Detalhe</h6>
+    {{ dado?.id }}
+    {{ dado?.login }}
+    {{ dado?.ativo }}
+  </div>
+</div>
