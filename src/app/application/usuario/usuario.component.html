@@ -1,1 +1,43 @@
-<p>usuario works!</p>
+<div class="card">
+  <div class="card-header">
+    <div class="float-left">
+      <h4>Usuário</h4>
+    </div>
+    <div class="float-right">
+      <button type="button" class="btn btn-primary" [routerLink]="['/usuario']">
+        Incluir
+      </button>
+    </div>
+  </div>
+  <div class="card-body">
+    <h6 class="card-subtitle mb-2 text-muted">Listagem</h6>
+    <table class="table table-striped table-hover">
+      <caption>
+        Total de registos:
+        {{
+          totalRegistro
+        }}
+      </caption>
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Login</th>
+          <th>Nome</th>
+          <th>Ativo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let entity of lista">
+          <td>
+            <a [routerLink]="['/usuario/', entity.id,'detalhar']">{{ entity.id }}</a>
+          </td>
+          <td>
+            <a [routerLink]="['/usuario/', entity.id,'detalhar']">{{ entity.login }}</a>
+          </td>
+          <td>{{ entity.Pessoa.nome }}</td>
+          <td>{{ entity.ativo }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
