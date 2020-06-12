@@ -1,5 +1,5 @@
 import { BrowserModule } from "@angular/platform-browser";
-import { NgModule } from "@angular/core";
+import { NgModule, LOCALE_ID } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
 
@@ -19,6 +19,7 @@ import { ProdutoComponent } from "./application/produto/produto.component";
 import { UsuariodetalheComponent } from "./application/usuario/usuariodetalhe/usuariodetalhe.component";
 import { UsuarioService } from "./service/usuario.service";
 import { PessoaService } from "./service/pessoa.service";
+import { AcessoService } from "./service/acesso.service";
 
 @NgModule({
   declarations: [
@@ -37,7 +38,12 @@ import { PessoaService } from "./service/pessoa.service";
     UsuariodetalheComponent,
   ],
   imports: [BrowserModule, HttpClientModule, FormsModule, AppRoutingModule],
-  providers: [PessoaService, UsuarioService],
+  providers: [
+    PessoaService,
+    UsuarioService,
+    AcessoService,
+    { provide: LOCALE_ID, useValue: "pt-BR" },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
