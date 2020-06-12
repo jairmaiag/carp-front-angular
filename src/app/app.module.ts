@@ -20,6 +20,7 @@ import { UsuariodetalheComponent } from "./application/usuario/usuariodetalhe/us
 import { UsuarioService } from "./service/usuario.service";
 import { PessoaService } from "./service/pessoa.service";
 import { AcessoService } from "./service/acesso.service";
+import { PublicoService } from "./service/publico.service";
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { AcessoService } from "./service/acesso.service";
     PessoaService,
     UsuarioService,
     AcessoService,
+    PublicoService,
     { provide: LOCALE_ID, useValue: "pt-BR" },
   ],
   bootstrap: [AppComponent],
