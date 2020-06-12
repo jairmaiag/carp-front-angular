@@ -9,11 +9,11 @@ import { PessoaService } from "./../../service/pessoa.service";
   styleUrls: ["./pessoa.component.css"],
 })
 export class PessoaComponent implements OnInit {
-  pessoas: Pessoa[];
+  lista: Pessoa[];
 
   constructor(private serivco: PessoaService) {}
 
   ngOnInit(): void {
-    this.serivco.listar().subscribe(dados => this.pessoas = dados);
+    this.serivco.listar().subscribe((dados) => (this.lista = dados));
   }
 }
