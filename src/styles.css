@@ -1,1 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
+.bodyAcesso {
+  background-image: linear-gradient(to bottom, #1e90ff, #000);
+  height:100vh;
+}
+menu {
+  padding-inline-start: 00px;
+}
