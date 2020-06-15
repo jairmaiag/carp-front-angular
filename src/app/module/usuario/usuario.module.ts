@@ -1,5 +1,6 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
+import { FormsModule } from "@angular/forms";
 
 import { UsuarioRoutingModule } from "./usuario-routing.module";
 import { UsuarioListComponent } from "./component/usuario-list/usuario-list.component";
@@ -13,13 +14,12 @@ import { UsuarioService } from "./serivce/usuario.service";
     UsuarioDetalheComponent,
     UsuarioFormComponent,
   ],
-  imports: [CommonModule, UsuarioRoutingModule],
+  imports: [CommonModule, FormsModule, UsuarioRoutingModule],
   providers: [UsuarioService],
   exports: [
     UsuarioListComponent,
     UsuarioDetalheComponent,
     UsuarioFormComponent,
-    UsuarioService,
   ],
 })
 export class UsuarioModule {}
