@@ -4,8 +4,6 @@ import { FormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
 
 import { AppRoutingModule } from "./app-routing.module";
-import { AcessoModule } from "./module/acesso/acesso.module";
-import { UsuarioModule } from "./module/usuario/usuario.module";
 import { OrcamentoModule } from "./module/orcamento/orcamento.module";
 
 import { AppComponent } from "./app.component";
@@ -39,8 +37,6 @@ import { PublicoService } from "./service/publico.service";
     HttpClientModule,
     FormsModule,
     AppRoutingModule,
-    AcessoModule,
-    UsuarioModule,
     OrcamentoModule,
   ],
   providers: [

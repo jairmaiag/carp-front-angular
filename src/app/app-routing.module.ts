@@ -11,6 +11,18 @@ import { OrcamentoComponent } from "./application/orcamento/orcamento.component"
 import { OrdemservicoComponent } from "./application/ordemservico/ordemservico.component";
 
 const routes: Routes = [
+  {
+    path: "login",
+    loadChildren: () =>
+      import("./module/acesso/acesso.module").then((mod) => mod.AcessoModule),
+  },
+  {
+    path: "usuario",
+    loadChildren: () =>
+      import("./module/usuario/usuario.module").then(
+        (mod) => mod.UsuarioModule
+      ),
+  },
   { path: "", pathMatch: "full", component: HomeComponent },
   { path: "funcionario", component: FuncionarioComponent },
   { path: "cliente", component: ClienteComponent },
