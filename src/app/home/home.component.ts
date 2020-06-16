@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 
-import { AcessoService } from "./../service/acesso.service";
+import * as $ from "jquery";
 
 @Component({
   selector: "home",
@@ -8,7 +8,10 @@ import { AcessoService } from "./../service/acesso.service";
   styleUrls: ["./home.component.css"],
 })
 export class HomeComponent implements OnInit {
-  constructor(private acesso: AcessoService) {}
+  constructor() {
+    $("body").removeClass("bodyAcesso");
+  }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+  }
 }
