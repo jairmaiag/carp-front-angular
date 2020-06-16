@@ -11,18 +11,21 @@ import { AcessoService } from "./../../serivce/acesso.service";
   styleUrls: ["./acesso.component.css"],
 })
 export class AcessoComponent implements OnInit {
+
   usuario: Usuario;
+  falhaAutenticacao: boolean = false;
+
   constructor(private acessoService: AcessoService) {
     this.usuario = this.acessoService.getUsuario();
     $("body").addClass("bodyAcesso");
   }
 
-  ngOnInit(): void {}
-  login(formulario): void {
-    console.log(formulario);
-    console.log(this.usuario);
-    //
-    //this.usuario = this.acessoService.login(this.usuario);
+  ngOnInit(): void { }
+
+  login(formAcesso): void {
+    this.acessoService.login(this.usuario);
+    this.falhaAutenticacao = !this.acessoService.getUsuarioLogado();
   }
-  logout(): void {}
+
+  logout(): void { }
 }
