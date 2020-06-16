@@ -3,7 +3,7 @@ import { Component, OnInit } from "@angular/core";
 import { Observable } from "rxjs";
 
 import { Usuario } from "./../../model/usuario";
-import { UsuarioService } from "src/app/service/usuario.service";
+import { UsuarioService } from "./../../serivce/usuario.service";
 
 @Component({
   selector: "app-usuario-list",
