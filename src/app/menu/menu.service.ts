@@ -1,12 +1,24 @@
 import { Injectable } from "@angular/core";
 
 import { Item } from "./item";
+import { PublicoService } from "../service/publico.service";
+import { AcessoService } from "../module/acesso/serivce/acesso.service";
 
 @Injectable({
   providedIn: "root",
 })
 export class MenuService {
-  constructor() {}
+
+  logado: boolean = false;
+
+  constructor(private publicService: PublicoService) {
+    AcessoService.logado.subscribe(logado => this.logado = logado);
+    //this.logado = AcessoService.usuarioLogado;
+  }
+
+  getLogado(): boolean {
+    return this.logado;
+  }
   getMenu(): Array<Item> {
     let itnesTabela: Array<Item> = [
       { id: 1, texto: "Usuário", link: "/usuario", subIntens: null },
