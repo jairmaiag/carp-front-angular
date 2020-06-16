@@ -4,9 +4,10 @@ import { Injectable } from "@angular/core";
   providedIn: "root",
 })
 export class PublicoService {
-  logado: boolean = false;
+  private logado: boolean = false;
 
-  constructor() {}
+  constructor() { }
+
   getLogado(): boolean {
     return this.logado;
   }
