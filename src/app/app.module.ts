@@ -18,6 +18,8 @@ import { FornecedorComponent } from "./application/fornecedor/fornecedor.compone
 import { ProdutoComponent } from "./application/produto/produto.component";
 import { PessoaService } from "./service/pessoa.service";
 import { PublicoService } from "./service/publico.service";
+import { AcessoService } from "./module/acesso/serivce/acesso.service";
+import { AcessoGuard } from "./guards/acesso.guard";
 
 @NgModule({
   declarations: [
@@ -42,6 +44,8 @@ import { PublicoService } from "./service/publico.service";
   providers: [
     PessoaService,
     PublicoService,
+    AcessoService,
+    AcessoGuard,
     { provide: LOCALE_ID, useValue: "pt-BR" },
   ],
   bootstrap: [AppComponent],
